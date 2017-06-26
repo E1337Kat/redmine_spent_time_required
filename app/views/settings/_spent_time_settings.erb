@@ -1,4 +1,4 @@
 <p>
   <label for="settings_statuses">Status IDs</label>
-  <%= text_field_tag 'settings[statuses]', @settings['statuses'] %>
+  <%= select_tag "settings[statuses]", options_for_select(IssueStatus.sorted.to_a, @settings['statuses']), {:multiple => true, :size => 8} %>
 </p>

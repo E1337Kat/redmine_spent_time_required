@@ -15,9 +15,9 @@ module RedmineSpentTimeRequired
 
       module InstanceMethods
         def update_with_check_spent_time
-          allowed_statuses = Setting.plugin_redmine_spent_time_required['statuses'].scan(/\d+/)
-          current_status = params[:issue][:status_id]
-          if ((params[:time_entry] != nil) && (params[:time_entry][:hours] == "") && (allowed_statuses.member?(current_status.to_s)))
+          allowed_statuses = Setting.plugin_redmine_spent_time_required['statuses']
+          current_status = IssueStatus.find(params[:issue][:status_id])
+          if ((params[:time_entry] != nil) && (params[:time_entry][:hours] == "") && (allowed_statuses.include?(current_status.to_s)))
             flash[:error] = "Spent time required"
             find_issue
             update_issue_from_params
