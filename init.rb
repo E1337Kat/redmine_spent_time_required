@@ -19,7 +19,7 @@ Redmine::Plugin.register :redmine_spent_time_required do
   author 'Max Prokopiev & Ellie Peterson'
   description 'Plugin to require adding spent time'
   version '0.0.2'
-  url 'http://trs.io/'
+  url 'http://github.com/juggler'
   author_url 'http://github.com/e1337kat'
 
   settings(:default => {
