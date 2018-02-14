@@ -18,12 +18,12 @@ Redmine::Plugin.register :redmine_spent_time_required do
   name 'Redmine Spent Time Required'
   author 'Max Prokopiev & Ellie Peterson'
   description 'Plugin to require adding spent time'
-  version '0.0.2'
+  version '0.0.3'
   url 'http://github.com/juggler'
   author_url 'http://github.com/e1337kat'
 
   settings(:default => {
-             'statuses' => nil
+             'statuses' => '1'
            }, :partial => 'settings/spent_time_settings')
 
 end
